@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+
+}
+
+.cloud, .grass, .road {
+    position:relative;
+}
+
+.cloud {
+    background-color: skyblue;
+    width:100%;
+    height:230px;
+}
+.grass {
+    background-color: rgb(16, 124, 16);
+    width:100%;
+    height:200px;
+}
+
+.road {
+    height:200px;
+    width:100%;
+    background-color:rgb(41, 35, 35);
+
+}
+.line {
+    position:absolute;
+    border-bottom: 5px dashed white;
+    width:100%;
+    top:50%;
+    left:0;
+}
+.cl {
+    position:absolute;
+    width:200px;
+    height:150px;
+    z-index: 3;
+    animation: cloud 80s linear 0s infinite normal both;
+}
+.second {
+    position:absolute;
+    left:200px;
+    width:150px;
+    height:150px;
+    bottom:0;
+    z-index: 0;
+    opacity: 0.8;
+    animation: cloud 60s linear 1s infinite normal both;
+}
+.third {
+    width:350px;
+    height:200px;
+    position:absolute;
+    left:350px;
+    animation: cloud 50s linear 3s infinite normal both;
+}
+.mario {
+    width:150px;
+    position:absolute;
+    left:-35px;
+    top:-30px;
+    animation: mario 3s linear 0s infinite normal, 
+               jump  0.5s 0.5s linear ;
+}
+ .mario:hover {
+    animation-play-state:paused;
+    cursor:pointer;
+}
+
+.luigi {
+    width: 110px;
+    position: absolute;
+    left:-100px;
+    bottom:0;
+    animation: luigi 4s linear 0s infinite reverse;
+
+ 
+}
+.luigi:hover {
+    animation-play-state: paused;
+    cursor:pointer;
+}
+
+@keyframes mario {
+    from{transform:translateX(-100px)}
+    to{transform: translateX(1000px);}
+}
+@keyframes luigi {
+    from{transform:translateX(-100)}
+    to{transform:translateX(1000px)}
+}
+@keyframes cloud {
+    from{left:-300px}
+    to{left:100%}
+}
+@keyframes jump {
+   0% {top:-30px}
+    50%{top:-80px }
+    100%{top:-30px}
+
+}
